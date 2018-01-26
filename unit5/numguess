@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import math
+maxi = int(input("maximum value? "))
+mini = int(input("minimum value? "))
+
+guess_num = 0
+guess = math.floor((maxi + mini)/2)
+while guess_num == 0:
+    print(guess)
+    resp = input("> ")
+    if resp == "high":
+        maxi = guess
+        guess = math.floor((guess + mini)/2)
+    elif resp == "low":
+        mini = guess
+        guess = math.floor((maxi + guess)/2)
+    elif resp == "correct":
+        guess_num = 1
